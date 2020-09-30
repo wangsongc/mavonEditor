@@ -1,0 +1,21 @@
+name: ESlint
+on:
+  pull_request:
+    branches: eslint-fix
+  push:
+    branches: eslint-fix
+jobs:
+  eslint:
+    
+    name: runner/eslint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: install eslint
+        run: |
+          npm install eslint -D
+      - name: eslint
+        uses: reviewdog/action-eslint@v1
+        with:
+          reporter: github-pr-review # Change reporter.
+          eslint_flags: 'src/'
