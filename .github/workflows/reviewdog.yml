@@ -11,10 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: install eslint
+      - name: install dep
         run: |
-          npm install eslint -D
-          npm i eslint-plugin-html@latest -D
+          npm install
       - name: eslint
         uses: reviewdog/action-eslint@v1
         with:
