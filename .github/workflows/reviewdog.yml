@@ -14,6 +14,7 @@ jobs:
       - name: install eslint
         run: |
           npm install eslint -D
+          npm i eslint-plugin-html@latest -D
       - name: eslint
         uses: reviewdog/action-eslint@v1
         with:
