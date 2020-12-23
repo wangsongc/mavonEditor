@@ -5,4 +5,6 @@ git-debug.log
 .idea/
 .DS_Store
 .ftpconfig
+package-lock.json
+.vs
 *.swp
