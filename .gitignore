@@ -8,3 +8,4 @@ git-debug.log
 package-lock.json
 .vs
 *.swp
+/tests/unit/coverage/*

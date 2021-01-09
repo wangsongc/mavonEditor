@@ -335,7 +335,7 @@ export default {
         // 设置默认焦点
         if (this.autofocus) {
             this.getTextareaDom().focus();
-        }
+            }
         // fullscreen事件
         fullscreenchange(this);
         this.d_value = this.value || "";
@@ -441,6 +441,9 @@ export default {
             this.d_value = this.d_value.replace(reg, '');
             this.iRender();
             this.$emit('imgDel', file);
+        },
+        $test(){
+            console.log('****test****')
         },
         $imgAdd(pos, $file, isinsert) {
             if (isinsert === undefined) isinsert = true;
@@ -613,6 +616,7 @@ export default {
                 $vm.d_help = res;
             })
             this.d_words = CONFIG[`words_${lang}`];
+           
         },
         // 编辑开关
         editableTextarea() {

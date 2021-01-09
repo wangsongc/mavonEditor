@@ -23,4 +23,9 @@ module.exports = {
   width: 80%;
   height: 580px;
 }
+
+/* .v-note-wrapper{
+  display: block !important;
+  position: static !important;
+} */
 </style>

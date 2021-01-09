@@ -3,7 +3,16 @@
     ["env", {
        "modules": false
     }],
+    [
+      "babel-preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ], 
     "stage-2"
+    //"@vue/cli-plugin-babel/preset"
   ],
   "plugins": ["transform-runtime"],
   "comments": false
