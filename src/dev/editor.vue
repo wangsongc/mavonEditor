@@ -11,7 +11,7 @@ module.exports = {
       aaa:"",
       xssOptions: {
         whiteList: {
-          img: ["src", "alt", "width", "height"],
+          img: ["src", "alt", "width", "height"]
         },
         stripIgnoreTagBody: true
       }
