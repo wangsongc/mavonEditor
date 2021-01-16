@@ -312,10 +312,11 @@
             }
         },
         watch:{
-            s_img_link_open(newVlaue){
-              //fix issue #644
-              this.$parent.$el.style.zIndex =  newVlaue ? 1501:1500;
+            s_img_link_open(newVlaue) {
+              // fix issue #644
+              this.$parent.$el.style.zIndex =  newVlaue ? 1501 : 1500;
             }
+
         }
     }
 </script>
