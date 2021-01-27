@@ -14,9 +14,9 @@ module.exports = {
     "^.+\\.vue$": "<rootDir>/node_modules/vue-jest",
     '.*\\.(yml|html|md)$': 'jest-raw-loader'
   },
-  setupFiles: ['<rootDir>/tests/unit/setup.js'], // 类似 webpack.entry
-  coverageDirectory: '<rootDir>/tests/unit/coverage', // 类似 webpack.output
-  collectCoverageFrom: [ // 类似 webpack 的 rule.include
+  setupFiles: ['<rootDir>/tests/unit/setup.js'],
+  coverageDirectory: '<rootDir>/tests/unit/coverage',
+  collectCoverageFrom: [
     'src/**/*.{js,vue}',
     '!src/main.js',
     '!src/dev/**',
