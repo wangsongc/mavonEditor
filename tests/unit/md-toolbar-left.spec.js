@@ -131,12 +131,6 @@ describe('通过props控制left-toolbars显示', () => {
   })
 })
 
-describe('prop test: editable', () => {
-  it('', () => {
-
-  })
-})
-
 describe('通过按钮点击调用$clicks方法，检查emit事件', () => {
   it('点击工具栏触发事件', () => {
     //挂载左工具栏组件，传入props
@@ -162,11 +156,17 @@ describe('通过按钮点击调用$clicks方法，检查emit事件', () => {
   })
 })
 
-
 describe('直接调用method测试', () => {
   it('', () => {
     const wrapper = new factory({ toolbars: { 'bold': true }, editable: false, d_words: d_words_zh_cn })
     wrapper.vm.handleClose('bold')
     console.log(wrapper.vm.s_img_dropdown_open)
+  })
+})
+
+describe('Snapshot', () => {
+  it('Snapshot', () => {
+    const wrapper = new factory({ toolbars: { 'bold': true }, editable: false, d_words: d_words_zh_cn })
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

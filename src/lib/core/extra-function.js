@@ -15,7 +15,7 @@
 /**
  * textarea 插入内容
  */
-export const insertTextAtCaret = (obj, {prefix, subfix, str, type}, $vm) => {
+export const insertTextAtCaret = (obj, { prefix, subfix, str, type }, $vm) => {
     obj.focus()
     if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
         var startPos = obj.selectionStart;
@@ -50,7 +50,7 @@ export const insertTextAtCaret = (obj, {prefix, subfix, str, type}, $vm) => {
 }
 // 处理粗体与斜体冲突问题
 function judgeItalicAndBold(prefix, subfix, tmpStr, startPos, endPos) {
-    if (prefix === '*' && subfix ===  '*') {
+    if (prefix === '*' && subfix === '*') {
         if (tmpStr.substring(startPos - 2, startPos - 1) === '*' && tmpStr.substring(endPos + 1, endPos + 2) === '*') {
             return false
         }
@@ -111,7 +111,7 @@ export const removeLine = ($vm) => {
         if (end < tmpStr.length) {
             end++
         }
-        obj.value = tmpStr.substring(0, start)  + tmpStr.substring(end, tmpStr.length);
+        obj.value = tmpStr.substring(0, start) + tmpStr.substring(end, tmpStr.length);
         obj.selectionEnd = obj.selectionStart = start === 0 ? 0 : start - 1;
     } else {
         alert('Error: Browser version is too low')
@@ -193,7 +193,7 @@ export const unInsertTab = ($vm, tab) => {
         let lastLine = tmpStr.substring(0, startPos).split('\n').pop()
         if (lastLine.search(regTab) >= 0) {
             // 替换最后一个制表符为空
-            obj.value = tmpStr.substring(0, startPos - lastLine.length) +  lastLine.replace(regTab, '') + tmpStr.substring(endPos, tmpStr.length);
+            obj.value = tmpStr.substring(0, startPos - lastLine.length) + lastLine.replace(regTab, '') + tmpStr.substring(endPos, tmpStr.length);
             obj.selectionStart = obj.selectionEnd = startPos - (tab || 1);
         }
     } else {
@@ -249,7 +249,7 @@ export const insertEnter = ($vm, event) => {
 /**
  * 生成导航目录
  */
-export const getNavigation = ($vm , full) => {
+export const getNavigation = ($vm, full) => {
     let navigationContent;
 
     navigationContent = $vm.$refs.navigationContent
@@ -258,10 +258,10 @@ export const getNavigation = ($vm , full) => {
     let nodes = navigationContent.children
     if (nodes.length) {
         for (let i = 0; i < nodes.length; i++) {
-            judageH(nodes[i] , i , nodes)
+            judageH(nodes[i], i, nodes)
         }
     }
-    function judageH(node , i , nodes) {
+    function judageH(node, i, nodes) {
         let reg = /^H[1-6]{1}$/;
         if (!reg.exec(node.tagName)) {
             node.style.display = 'none'
@@ -350,11 +350,11 @@ export const windowResize = ($vm) => {
 
 export function loadScript(src, callback) {
     if (!(typeof callback === 'function')) {
-        callback = function() {};
+        callback = function () { };
     }
-    var check = document.querySelectorAll("script[src='" + src + "']");
+    var check = document.querySelectorAll("script[src='" + src + "']")
     if (check.length > 0) {
-        check[0].addEventListener('load', function() {
+        check[0].addEventListener('load', function () {
             callback();
         });
         callback();
@@ -381,19 +381,28 @@ export function loadScript(src, callback) {
 }
 
 // <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/agate.min.css" rel="stylesheet">
-export function loadLink(src, callback) {
+// export function loadLink(src, callback) {
+export function loadLink(src, callback, id) {
     if (!(typeof callback === 'function')) {
-        callback = function() {};
+        callback = function () { };
     }
     var check = document.querySelectorAll("link[href='" + src + "']");
     if (check.length > 0) {
         callback();
         return;
     }
+    if (id) {
+        var styles = document.querySelectorAll("link#" + id);
+        if (styles.length) {
+            styles[0].href = src;
+            return;
+        }
+    }
     var link = document.createElement('link');
     var head = document.getElementsByTagName('head')[0];
     link.rel = 'stylesheet';
     link.href = src;
+    id && (link['id'] = id);
     if (link.addEventListener) {
         link.addEventListener('load', function () {
             callback();

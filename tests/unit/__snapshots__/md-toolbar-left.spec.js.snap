@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Snapshot 1`] = `
+<div class="v-left-item"> <button disabled="disabled" type="button" aria-hidden="true" title="粗体 (ctrl+b)" class="op-icon fa fa-mavon-bold"></button>
+  <!---->
+  <!----> <span class="op-icon-divider"></span>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <transition-stub name="fade">
+    <!---->
+  </transition-stub>
+</div>
+`;

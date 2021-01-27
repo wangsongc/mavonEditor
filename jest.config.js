@@ -21,5 +21,8 @@ module.exports = {
     '!src/main.js',
     '!src/dev/**',
     '!**/node_modules/**'
+  ],
+  snapshotSerializers: [
+    "jest-serializer-vue"
   ]
 }

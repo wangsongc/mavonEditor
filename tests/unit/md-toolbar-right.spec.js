@@ -42,3 +42,9 @@ describe('通过按钮点击调用$clicks方法，检查emit事件', () => {
     expect(wrapper.emitted().toolbar_right_click[0]).toEqual(['subfield'])
   })
 })
+describe('Snapshot', () => {
+  it('Snapshot', () => {
+    const wrapper = new factory(props)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+})

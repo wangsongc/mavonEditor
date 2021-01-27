@@ -160,6 +160,7 @@ export default {
             type: String,
             default: '0 2px 12px 0 rgba(0, 0, 0, 0.1)'
         },
+        // 待确认，好像没有使用，help帮助是由toolbars来控制的
         help: {
             type: String,
             default: null
@@ -621,9 +622,12 @@ export default {
         editableTextarea() {
             let text_dom = this.$refs.vNoteTextarea.$refs.vTextarea;
             if (this.editable) {
+ //               console.log('this.editable='+ this.editable)
                 text_dom.removeAttribute('disabled');
+ //               console.log('01'+text_dom.getAttribute('disabled'))
             } else {
                 text_dom.setAttribute('disabled', 'disabled');
+  //              console.log('02'+text_dom.getAttribute('disabled'))
             }
         },
         codeStyleChange(val, isInit) {
@@ -634,12 +638,14 @@ export default {
                 return;
             }
             var url = this.p_external_link.hljs_css(val);
+
             if (url.length === 0 && isInit) {
                 console.warn('hljs color scheme', val, 'do not exist, loading default github');
                 url = this.p_external_link.hljs_css('github')
             }
             if (url.length > 0) {
-                loadLink(url)
+                // loadLink(url)
+                loadLink(url,null,"md-code-style");
             } else {
                 console.warn('hljs color scheme', val, 'do not exist, hljs color scheme will not change');
             }

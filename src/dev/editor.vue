@@ -1,6 +1,6 @@
 <template>
-  <div id="editor">
-    <mavon-editor v-model="aaa" style="height: 100%" ></mavon-editor>
+  <div>
+    <mavon-editor style="height: 100%" :value="textvalue" :externalLink = 'externalLink' :defaultOpen="defaultOpen" :subfield="subfield" ></mavon-editor>
   </div>
 </template>
 <script>
@@ -8,13 +8,21 @@ module.exports = {
   name: "editor",
   data() {
     return {
-      aaa:"",
-      xssOptions: {
-        whiteList: {
-          img: ["src", "alt", "width", "height"]
-        },
-        stripIgnoreTagBody: true
+      textvalue:"preview",
+      defaultOpen: "edit",
+      subfield: false,
+      externalLink: {
+                hljs_css: function(css) {
+                    // 这是你的代码高亮配色文件路径
+                    return '/highlightjs/styles/' + css + '.min.css';
+                }
       }
+      // xssOptions: {
+      //   whiteList: {
+      //     img: ["src", "alt", "width", "height"]
+      //   },
+      //   stripIgnoreTagBody: true
+      // }
     };
   },
   computed: {},
