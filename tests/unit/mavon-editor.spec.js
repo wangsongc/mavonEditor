@@ -1,7 +1,6 @@
-import { shallowMount, mount, createLocalVue } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import MavonEditor from '@/mavon-editor.vue'
 import autoTextarea from 'auto-textarea/auto-textarea.vue'
-import { data } from 'autoprefixer';
 
 /*eslint-disable */
 // 解决Error: Not implemented: window.alert
@@ -50,8 +49,8 @@ describe('点击工具栏触发bold点击事件', () => {
   })
 })
 
-describe('Snapshot', () => {
-  it('Snapshot', () => {
+describe('snapshot', () => {
+  it('snapshot', () => {
     const wrapper = new factory()
     expect(wrapper.html()).toMatchSnapshot()
   })
