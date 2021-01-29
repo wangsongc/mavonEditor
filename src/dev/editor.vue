@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mavon-editor style="height: 100%" :value="textvalue" :externalLink = 'externalLink' :defaultOpen="defaultOpen" :subfield="subfield" ></mavon-editor>
+    <mavon-editor style="height: 100%" :value="textvalue" ></mavon-editor>
   </div>
 </template>
 <script>
@@ -8,7 +8,7 @@ module.exports = {
   name: "editor",
   data() {
     return {
-      textvalue:"preview",
+      textvalue:"",
       defaultOpen: "edit",
       subfield: false,
       externalLink: {

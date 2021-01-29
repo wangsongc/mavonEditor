@@ -1,31 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot Snapshot 1`] = `
-<div class="v-left-item"> <button disabled="disabled" type="button" aria-hidden="true" title="粗体 (ctrl+b)" class="op-icon fa fa-mavon-bold"></button>
-  <!---->
-  <!----> <span class="op-icon-divider"></span>
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  <!---->
+exports[`snapshot snapshot 1`] = `
+<div class="v-left-item"> <button type="button" aria-hidden="true" title="粗体 (ctrl+b)" class="op-icon fa fa-mavon-bold"></button> <button type="button" aria-hidden="true" title="斜体 (ctrl+i)" class="op-icon fa fa-mavon-italic"></button>
+  <div type="button" aria-hidden="true" title="标题 (ctrl+h)" class="op-icon fa fa-mavon-header dropdown dropdown-wrapper">
+    <transition-stub name="fade">
+      <div class="op-header popup-dropdown transition" style="display: none;">
+        <div title="#" class="dropdown-item"><span>一级标题</span></div>
+        <div title="## " class="dropdown-item"><span>二级标题</span></div>
+        <div title="### " class="dropdown-item"><span>三级标题</span></div>
+        <div title="#### " class="dropdown-item"><span>四级标题</span></div>
+        <div title="##### " class="dropdown-item"><span>五级标题</span></div>
+        <div title="###### " class="dropdown-item"><span>六级标题</span></div>
+      </div>
+    </transition-stub>
+  </div> <span class="op-icon-divider"></span> <button type="button" title="下划线 (ctrl+u)" aria-hidden="true" class="op-icon fa fa-mavon-underline"></button> <button type="button" title="中划线 (ctrl+shift+d)" aria-hidden="true" class="op-icon fa fa-mavon-strikethrough"></button> <button type="button" title="标记 (ctrl+m)" aria-hidden="true" class="op-icon fa fa-mavon-thumb-tack"></button> <button type="button" aria-hidden="true" title="上角标 (ctrl+alt+s)" class="op-icon fa fa-mavon-superscript"></button> <button type="button" aria-hidden="true" title="下角标 (ctrl+shift+s)" class="op-icon fa fa-mavon-subscript"></button> <button type="button" aria-hidden="true" title="居左 (ctrl+l)" class="op-icon fa fa-mavon-align-left"></button> <button type="button" aria-hidden="true" title="居中 (ctrl+e)" class="op-icon fa fa-mavon-align-center"></button> <button type="button" aria-hidden="true" title="居右 (ctrl+r)" class="op-icon fa fa-mavon-align-right"></button> <span class="op-icon-divider"></span> <button type="button" aria-hidden="true" title="段落引用 (ctrl+q)" class="op-icon fa fa-mavon-quote-left"></button> <button type="button" aria-hidden="true" title="有序列表 (ctrl+o)" class="op-icon fa fa-mavon-list-ol"></button> <button type="button" aria-hidden="true" title="无序列表 (ctrl+alt+u)" class="op-icon fa fa-mavon-list-ul"></button> <span class="op-icon-divider"></span> <button type="button" aria-hidden="true" title="链接 (ctrl+l)" class="op-icon fa fa-mavon-link"></button>
+  <div type="button" aria-hidden="true" class="op-icon fa fa-mavon-picture-o dropdown dropdown-wrapper">
+    <transition-stub name="fade">
+      <div class="op-image popup-dropdown transition" style="display: none;">
+        <div class="dropdown-item"><span>添加图片链接</span></div>
+        <div class="dropdown-item" style="overflow: hidden;"><input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" multiple="multiple">上传图片
+        </div>
+        <!---->
+      </div>
+    </transition-stub>
+  </div> <button type="button" aria-hidden="true" title="代码块 (ctrl+alt+c)" class="op-icon fa fa-mavon-code"></button> <button type="button" aria-hidden="true" title="表格 (ctrl+alt+t)" class="op-icon fa fa-mavon-table"></button> <span class="op-icon-divider"></span> <button type="button" aria-hidden="true" title="上一步 (ctrl+z)" class="op-icon fa fa-mavon-undo"></button> <button type="button" aria-hidden="true" title="下一步 (ctrl+y)" class="op-icon fa fa-mavon-repeat"></button> <button type="button" aria-hidden="true" title="清空 (ctrl+breakspace)" class="op-icon fa fa-mavon-trash-o"></button> <button type="button" aria-hidden="true" title="保存 (ctrl+s)" class="op-icon fa fa-mavon-floppy-o"></button>
   <transition-stub name="fade">
     <!---->
   </transition-stub>

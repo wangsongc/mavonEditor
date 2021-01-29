@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot Snapshot 1`] = `
+exports[`snapshot snapshot 1`] = `
 <div class="v-note-wrapper markdown-body shadow" style="box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
   <div class="v-note-op" style="background: rgb(255, 255, 255);">
     <div class="v-left-item transition"> <button type="button" aria-hidden="true" title="粗体 (ctrl+b)" class="op-icon fa fa-mavon-bold"></button> <button type="button" aria-hidden="true" title="斜体 (ctrl+i)" class="op-icon fa fa-mavon-italic"></button>

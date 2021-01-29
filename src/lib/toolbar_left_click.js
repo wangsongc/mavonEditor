@@ -178,8 +178,6 @@ export const toolbar_left_click = (_type, $vm) => {
      };
      if (_param_of_insert_text.hasOwnProperty(_type)) {
          // 插入对应的内容
-         console.log('******打印插入******')
-         console.log($vm.getTextareaDom())
          $vm.insertText($vm.getTextareaDom(),
              _param_of_insert_text[_type]);
      }

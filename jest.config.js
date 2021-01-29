@@ -20,7 +20,12 @@ module.exports = {
     'src/**/*.{js,vue}',
     '!src/main.js',
     '!src/dev/**',
-    '!**/node_modules/**'
+    '!**/node_modules/**',
+    // 不确定下面这些文件是否有用，dist打包没用到
+    '!src/lib/core/markdown.js',
+    '!src/lib/core/onecolumn-event.js',
+    '!src/lib/core/to-markdown.js',
+    '!src/lib/core/highlight.js'
   ],
   snapshotSerializers: [
     "jest-serializer-vue"

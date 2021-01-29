@@ -30,20 +30,76 @@ const props = {
   d_words: d_words_zh_cn
 }
 
+let wrapper
+function checkEvent(buttonClass, event) {
+  expect(wrapper.find(buttonClass).exists()).toBe(true)
+  wrapper.find(buttonClass).trigger('click')
+  expect(wrapper.emitted().toolbar_right_click[0]).toEqual([event])
+}
+
 describe('通过按钮点击调用$clicks方法，检查emit事件', () => {
-  it('点击工具栏触发事件', () => {
-    //挂载左工具栏组件，传入props
-    const wrapper = new factory(props)
-    //检查字体加粗元素是否渲染
-    expect(wrapper.find('.op-icon.fa.fa-mavon-columns').exists()).toBe(true)
-    //点击字体加粗按钮触发$clicks
-    wrapper.find('.op-icon.fa.fa-mavon-columns').trigger('click')
-    //检查点击事件触发的emit事件
-    expect(wrapper.emitted().toolbar_right_click[0]).toEqual(['subfield'])
+  beforeEach(() => {
+    wrapper = new factory(props)
+  })
+  afterEach(() => {
+    wrapper.destroy()
+  })
+  it('点击导航栏触发事件', () => {
+    let buttonClass = '.op-icon.fa.fa-mavon-bars'
+    let event = 'navigation'
+    checkEvent(buttonClass, event)
+
+    buttonClass = '.op-icon.fa.fa-mavon-bars.selected'
+    checkEvent(buttonClass, event)
+  })
+  it('点击编辑/预览触发事件', () => {
+    let buttonClass = '.op-icon.fa.fa-mavon-eye-slash.selected'
+    let event = 'preview'
+    checkEvent(buttonClass, event)
+
+    buttonClass = '.op-icon.fa.fa-mavon-eye'
+    checkEvent(buttonClass, event)
+  })
+
+  it('点击全屏编辑触发事件', () => {
+    let buttonClass = '.op-icon.fa.fa-mavon-arrows-alt'
+    let event = 'fullscreen'
+    checkEvent(buttonClass, event)
+
+    buttonClass = '.op-icon.fa.fa-mavon-compress.selected'
+    checkEvent(buttonClass, event)
+  })
+
+  it('点击沉浸式阅读触发事件', () => {
+    let buttonClass = '.op-icon.fa.fa-mavon-window-maximize'
+    let event = 'read'
+    checkEvent(buttonClass, event)
+  })
+
+  it('点击单双栏触发事件', () => {
+    let buttonClass = '.op-icon.fa.fa-mavon-bars'
+    let event = 'navigation'
+    checkEvent(buttonClass, event)
+  })
+
+  it('点击查看文本触发事件', () => {
+    let buttonClass = '.op-icon.fa.fa-mavon-code'
+    let event = 'html'
+    checkEvent(buttonClass, event)
+
+    buttonClass = '.op-icon.fa.fa-mavon-code.selected'
+    checkEvent(buttonClass, event)
+  })
+
+  it('点击帮助触发事件', () => {
+    let buttonClass = '.op-icon.fa.fa-mavon-question-circle'
+    let event = 'help'
+    checkEvent(buttonClass, event)
   })
 })
-describe('Snapshot', () => {
-  it('Snapshot', () => {
+
+describe('snapshot', () => {
+  it('snapshot', () => {
     const wrapper = new factory(props)
     expect(wrapper.html()).toMatchSnapshot()
   })
