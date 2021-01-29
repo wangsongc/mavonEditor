@@ -3,8 +3,6 @@ import MavonEditor from '@/mavon-editor.vue'
 import autoTextarea from 'auto-textarea/auto-textarea.vue'
 
 /*eslint-disable */
-// 解决Error: Not implemented: window.alert
-jest.spyOn(window, 'alert').mockReturnValue();
 const factory = (propsData, mocks) => {
   return mount(MavonEditor, {
     propsData: {
@@ -19,7 +17,7 @@ const factory = (propsData, mocks) => {
   })
 }
 //language
-describe('测试语言切换', () => {
+describe('语言切换', () => {
   it('initLanguage', async () => {
     let wrapper = new factory({ d_words: null })
     //默认语言为zh-CN
